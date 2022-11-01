@@ -1,20 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/src/size_extension.dart';
 import 'package:get/get.dart';
 import 'package:timmarkus/app_config/app_colors.dart';
 import 'package:timmarkus/app_config/styles.dart';
 import 'package:timmarkus/controller%20/message_controller.dart';
-import 'package:timmarkus/controller%20/notification_controller.dart';
 import 'package:timmarkus/widgets/my_text_field.dart';
 
-class ChatScreen extends StatelessWidget {
+class ChatScreen extends StatefulWidget {
+  @override
+  State<ChatScreen> createState() => _ChatScreenState();
+}
+
+class _ChatScreenState extends State<ChatScreen> {
   MessageController messageController = MessageController();
   TextEditingController textController = TextEditingController();
   ScrollController scrollController = ScrollController();
   FocusNode textFocusNode = FocusNode();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+
+
+  scrollToBottom() {
+    scrollController.jumpTo(scrollController.position.maxScrollExtent);
+  }
+
+  @override
   Widget build(BuildContext context) {
+    SchedulerBinding.instance!.addPostFrameCallback((_) {
+      scrollController.jumpTo(scrollController.position.maxScrollExtent);
+    });
     return SafeArea(
       child: Scaffold(
         body: Column(
@@ -103,6 +122,14 @@ class ChatScreen extends StatelessWidget {
                 controller: textController,
                 hintText: 'Enter text here...',
                 suffixIcon: 'assets/icon/send_icon.png',
+                onEditingComplete: () {
+                  if(textController.text.toString().trim().length!=0) {
+                    textFocusNode.unfocus();
+                    messageController.messages.add(textController.text);
+                    textController.clear();
+                    scrollController.jumpTo(scrollController.position.maxScrollExtent);
+                  }
+                },
                 onSuffixIconTap: () {
                   if(textController.text.toString().trim().length!=0) {
                     textFocusNode.unfocus();

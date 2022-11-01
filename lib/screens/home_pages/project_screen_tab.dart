@@ -79,19 +79,17 @@ class ProjectScreenTab extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                    height: 100.h,
-                    child: Expanded(
-                      child: ListView.separated(
-                        itemCount: controller.recentData.length,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (context, index) {
-                          return renderingRecentData(controller.recentData[index]);
-                        },
-                        separatorBuilder: (context, index) {
-                          return SizedBox(width: 25.w,);
-                        },
-                      ),
+                    height: 110.h,
+                    child: ListView.separated(
+                      itemCount: controller.recentData.length,
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) {
+                        return renderingRecentData(controller.recentData[index]);
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(width: 25.w,);
+                      },
                     ),
                   ),
                   SizedBox(height: 35.h,),

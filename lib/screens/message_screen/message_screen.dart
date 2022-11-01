@@ -45,6 +45,7 @@ class MessageScreen extends StatelessWidget {
                 },
               ),
             ),
+            SizedBox(height: 15.h,),
           ],
         ),
       ),

@@ -42,18 +42,16 @@ class HomeScreenTab extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 5.w),
                       child: Container(
                         height: 80.h,
-                        child: Expanded(
-                          child: ListView.separated(
-                            itemCount: controller.rowData.length,
-                            shrinkWrap: true,
-                            scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) {
-                              return renderingRowData(controller.rowData[index]);
-                            },
-                            separatorBuilder: (context, index) {
-                              return SizedBox(width: 10.w,);
-                            },
-                          ),
+                        child: ListView.separated(
+                          itemCount: controller.rowData.length,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (context, index) {
+                            return renderingRowData(controller.rowData[index]);
+                          },
+                          separatorBuilder: (context, index) {
+                            return SizedBox(width: 10.w,);
+                          },
                         ),
                       ),
                     ),
@@ -70,18 +68,16 @@ class HomeScreenTab extends StatelessWidget {
                     SizedBox(height: 40.h,),
                     Container(
                       height: 125.h,
-                      child: Expanded(
-                        child: ListView.separated(
-                          itemCount: controller.tryData.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return renderingTryData(controller.tryData[index]);
-                          },
-                          separatorBuilder: (context, index) {
-                            return SizedBox(width: 10.w,);
-                          },
-                        ),
+                      child: ListView.separated(
+                        itemCount: controller.tryData.length,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return renderingTryData(controller.tryData[index]);
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(width: 10.w,);
+                        },
                       ),
                     ),
                     SizedBox(height: 40.h,),
@@ -91,18 +87,16 @@ class HomeScreenTab extends StatelessWidget {
                     SizedBox(height: 20.h,),
                     Container(
                       height: 100.h,
-                      child: Expanded(
-                        child: ListView.separated(
-                          itemCount: controller.recentData.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return renderingRecentData(controller.recentData[index]);
-                          },
-                          separatorBuilder: (context, index) {
-                            return SizedBox(width: 25.w,);
-                          },
-                        ),
+                      child: ListView.separated(
+                        itemCount: controller.recentData.length,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return renderingRecentData(controller.recentData[index]);
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(width: 25.w,);
+                        },
                       ),
                     ),
                     SizedBox(height: 40.h,),
@@ -112,27 +106,14 @@ class HomeScreenTab extends StatelessWidget {
                     SizedBox(height: 20.h,),
                     Container(
                       height: 300.h,
-                      child: Expanded(
-                        child: GridView.builder(
-                          itemCount: controller.advancedData.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 30.h, crossAxisSpacing: 28.w),
-                          itemBuilder: (context, index) {
-                            return renderingAdvanceData(controller.advancedData[index]);
-                          },
-                        )
-                        // Listview.separated(
-                        //   itemCount: controller.recentData.length,
-                        //   shrinkWrap: true,
-                        //   scrollDirection: Axis.horizontal,
-                        //   itemBuilder: (context, index) {
-                        //     return renderingRecentData(controller.recentData[index]);
-                        //   },
-                        //   separatorBuilder: (context, index) {
-                        //     return SizedBox(width: 25.w,);
-                        //   },
-                        // ),
+                      child: GridView.builder(
+                        itemCount: controller.advancedData.length,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, mainAxisSpacing: 30.h, crossAxisSpacing: 28.w),
+                        itemBuilder: (context, index) {
+                          return renderingAdvanceData(controller.advancedData[index]);
+                        },
                       ),
                     ),
                     SizedBox(height: 40.h,),
@@ -142,18 +123,16 @@ class HomeScreenTab extends StatelessWidget {
                     SizedBox(height: 20.h,),
                     Container(
                       height: 100.h,
-                      child: Expanded(
-                        child: ListView.separated(
-                          itemCount: controller.websiteData.length,
-                          shrinkWrap: true,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (context, index) {
-                            return renderingWebsiteData(controller.websiteData[index]);
-                          },
-                          separatorBuilder: (context, index) {
-                            return SizedBox(width: 25.w,);
-                          },
-                        ),
+                      child: ListView.separated(
+                        itemCount: controller.websiteData.length,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (context, index) {
+                          return renderingWebsiteData(controller.websiteData[index]);
+                        },
+                        separatorBuilder: (context, index) {
+                          return SizedBox(width: 25.w,);
+                        },
                       ),
                     ),
                     SizedBox(height: 20.h,),
