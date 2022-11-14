@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/src/size_extension.dart';
@@ -7,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:timmarkus/app_config/app_colors.dart';
 import 'package:timmarkus/app_config/styles.dart';
 import 'package:timmarkus/controller%20/home_screen_tab_controller.dart';
+import 'package:timmarkus/screens/mockup_screen/mockup_screen.dart';
 import 'package:timmarkus/widgets/my_text_field.dart';
 
 class HomeScreenTab extends StatelessWidget {
@@ -161,23 +161,28 @@ class HomeScreenTab extends StatelessWidget {
   }
 
   renderingRowData(Map data) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Container(
-          height: 60.sp,
-          width: 60.sp,
-          decoration: BoxDecoration(
-            color: Colors.white,
-            shape: BoxShape.circle,
-            image: DecorationImage(
-              image: AssetImage(data['imagePath']),
-            )
+    return GestureDetector(
+      onTap: () {
+        Get.to(MockupScreen());
+      },
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            height: 60.sp,
+            width: 60.sp,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              shape: BoxShape.circle,
+              image: DecorationImage(
+                image: AssetImage(data['imagePath']),
+              )
+            ),
           ),
-        ),
-        SizedBox(height: 5.h,),
-        Text(data['title'], style: Styles.myTextStyle(fontSize: 12.sp, color: Colors.white,),),
-      ],
+          SizedBox(height: 5.h,),
+          Text(data['title'], style: Styles.myTextStyle(fontSize: 12.sp, color: Colors.white,),),
+        ],
+      ),
     );
   }
 

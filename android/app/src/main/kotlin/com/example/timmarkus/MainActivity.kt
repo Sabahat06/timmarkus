@@ -1,4 +1,4 @@
-package com.example.timmarkus
+package com.sbs.timmarkus
 
 import io.flutter.embedding.android.FlutterActivity
 
